@@ -1,0 +1,58 @@
+source ~/git-completion.bash
+
+# ----------------
+# Terminal Aliases
+#------------------
+alias clr="clear" # Clear your terminal screen
+alias ip="curl icanhazip.com" # Your public IP address
+alias ll="ls -al" # List all files in current directory in long list format
+alias ldir="ls -al | grep ^d" # List all directories in current directory in long list format
+alias ut="uptime" # Computer uptime
+
+# ------------------
+# Git Aliases
+# ------------------
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add --all'
+alias gau='git add --update'
+alias gb='git branch'
+alias gbd='git branch --delete '
+alias gc='git commit'
+alias gcm='git commit --message'
+alias gcf='git commit --fixup'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcom='git checkout master'
+alias gcos='git checkout staging'
+alias gcod='git checkout develop'
+alias gd='git diff'
+alias gda='git diff HEAD'
+alias gi='git init'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+alias gm='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'
+alias gf='git fetch'
+alias gup='git up'
+# ----------------------
+# Git Functions
+# ----------------------
+# Git log find by commit message
+function glf() { git log --all --grep="$1"; }
+function deploy_rpm() { ilocc deploy:upgrade mnc_fn=$1 package=$2 ssh_user=pce; }
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
